@@ -16,8 +16,16 @@ final class BrainfuckTests: XCTestCase {
         XCTAssertEqual(context.cells, [0, 0, 42])
     }
 
+    func testCat() throws {
+        let program = """
+        ,[.,]
+        """
+
+        XCTAssertEqual(try eval(program: program, input: "Hello, World!"), "Hello, World!")
+    }
+
     func testHelloWorld() throws {
-        let programm = """
+        let program = """
          1 +++++ +++               Set Cell #0 to 8
          2 [
          3     >++++               Add 4 to Cell #1; this will always set Cell #1 to 4
@@ -53,7 +61,7 @@ final class BrainfuckTests: XCTestCase {
         33 >++.
         """
 
-        XCTAssertEqual(try eval(program: programm), "Hello World!\n")
+        XCTAssertEqual(try eval(program: program), "Hello World!\n")
     }
 
     static var allTests = [
