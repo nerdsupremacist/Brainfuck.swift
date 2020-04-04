@@ -24,6 +24,24 @@ final class BrainfuckTests: XCTestCase {
         XCTAssertEqual(try eval(program: program, input: "Hello, World!"), "Hello, World!")
     }
 
+    func testSort() throws {
+        // Bubble sort
+        let program = """
+        >>,[>>,]<<[
+        [<<]>>>>[
+        <<[>+<<+>-]
+        >>[>+<<<<[->]>[<]>>-]
+        <<<[[-]>>[>+<-]>>[<<<+>>>-]]
+        >>[[<+>-]>>]<
+        ]<<[>>+<<-]<<
+        ]>>>>[.>>]
+        """
+
+        let input = [123, 42, 1337, 2, 57]
+        let sorted = try eval(program: program, input: input)
+        XCTAssertEqual(sorted, input.sorted())
+    }
+
     func testHelloWorld() throws {
         let program = """
          1 +++++ +++               Set Cell #0 to 8
