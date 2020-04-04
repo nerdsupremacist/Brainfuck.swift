@@ -128,7 +128,7 @@ extension Instruction {
             context.output.append(context.cells[context.currentPointer])
         case .input:
             let input = context.input.first ?? 0
-            context.input = context.input.dropLast()
+            context.input = Array(context.input.dropFirst())
             context.cells[context.currentPointer] = input
         case .loop(let loop):
             while context.cells[context.currentPointer] != 0 {
