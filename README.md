@@ -1,7 +1,3 @@
-<h3 align="center">
-  <img style="" src="https://res.cloudinary.com/cagatayc/image/upload/c_scale,w_500/v1493914344/bf.png" alt="brainfuck" />
-</h3>
-
 # Brainfuck.swift
 A [Brainfuck](https://esolangs.org/wiki/Brainfuck) interpreter written in Swift.
 
